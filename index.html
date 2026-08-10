@@ -65,7 +65,7 @@
     }
 
     .hero {
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop') center/cover;
+      background: url('./images/backgroud_1.jpg') center/cover;
       min-height: 520px;
       display: flex;
       align-items: center;
@@ -304,6 +304,61 @@
         display: none
       }
     }
+
+    /* Premium destination showcase */
+    .destinations-section { background: linear-gradient(180deg,#f7faff 0%,#fff 100%); }
+    .destination-intro { max-width:760px; margin:0 auto 34px; text-align:center; color:#667085; line-height:1.7; }
+    .destination-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+    .destination-card { position:relative; min-height:330px; border-radius:22px; overflow:hidden; background:#10233d;
+      box-shadow:0 16px 40px rgba(13,27,42,.13); transition:transform .25s ease, box-shadow .25s ease; }
+    .destination-card:hover { transform:translateY(-7px); box-shadow:0 24px 55px rgba(13,27,42,.20); }
+    .destination-card img { width:100%; height:100%; min-height:330px; object-fit:cover; display:block; transition:transform .5s ease; }
+    .destination-card:hover img { transform:scale(1.06); }
+    .destination-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(7,20,38,.03) 25%,rgba(7,20,38,.88) 100%); }
+    .destination-content { position:absolute; z-index:2; left:0; right:0; bottom:0; padding:24px; color:#fff; }
+    .destination-content .badge { background:rgba(255,255,255,.16); color:#fff; border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(8px); }
+    .destination-content h3 { margin:10px 0 7px; font-size:1.45rem; }
+    .destination-content p { margin:0; line-height:1.55; color:#edf4ff; font-size:.94rem; }
+    .destination-number { position:absolute; z-index:2; top:17px; left:18px; width:38px; height:38px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(11,78,162,.82); font-weight:bold; border:1px solid rgba(255,255,255,.35); }
+    .premium-strip { margin-top:34px; padding:20px 24px; border-radius:18px; background:#0d1b2a; color:#fff;
+      display:flex; justify-content:space-between; gap:20px; align-items:center; flex-wrap:wrap; }
+    .premium-strip strong { color:#fff; font-size:1.05rem; }
+    .premium-strip span { color:#cbd7e7; }
+    @media(max-width:800px){ .destination-grid{grid-template-columns:1fr;} .destination-card{min-height:300px;} .destination-card img{min-height:300px;} }
+
+
+    .destination-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 34px 28px;
+      align-items: stretch;
+    }
+    .destination-card {
+      min-height: 350px;
+      margin-bottom: 2px;
+      border: 1px solid rgba(11,78,162,.08);
+    }
+    .destination-card:nth-child(3n+2) { transform: translateY(14px); }
+    .destination-card:nth-child(3n+2):hover { transform: translateY(7px); }
+    .destination-card:nth-child(3n+3) { transform: translateY(28px); }
+    .destination-card:nth-child(3n+3):hover { transform: translateY(21px); }
+    .destination-grid::after { content:""; display:block; }
+    @media (max-width: 900px) {
+      .destination-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+      .destination-card:nth-child(3n+2),
+      .destination-card:nth-child(3n+3) { transform:none; }
+      .destination-card:nth-child(3n+2):hover,
+      .destination-card:nth-child(3n+3):hover { transform:translateY(-7px); }
+    }
+    @media (max-width: 600px) {
+      .destination-grid { grid-template-columns: 1fr; gap: 24px; }
+      .destination-card,
+      .destination-card:nth-child(3n+2),
+      .destination-card:nth-child(3n+3) { min-height:320px; transform:none; }
+      .destination-card:nth-child(3n+2):hover,
+      .destination-card:nth-child(3n+3):hover { transform:translateY(-7px); }
+    }
+
   </style>
 </head>
 
@@ -313,10 +368,12 @@
       <div class="brand">
         <img alt="logo"
           style="width:90px; height:90px;" src="./images/logo.jpeg" />
+          style="width:90px; height:90px;" src="./images/logo.jpeg" />
         <div>Cochin Cabs Tours &amp; Travels</div>
       </div>
       <div class="menu">
         <a href="#packages">Packages</a>
+        <a href="#destinations">Destinations</a>
         <a href="#fleet">Fleet</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -328,19 +385,19 @@
       <h1>Explore Kerala with Comfort &amp; Trust</h1>
       <p>
         Premium taxi service, airport transfers, Munnar tours, Athirappilly trips,
-        Alleppey backwaters, Thekkady, Kovalam and customized Kerala holiday packages.
+        Alleppey backwaters, Thekkady, Varkala, Kovalam, Kanyakumari and customized Kerala holiday packages.
       </p>
       <div class="btns">
-        <a class="btn primary" href="https://wa.me/919074298842" target="_blank">Book on WhatsApp</a>
+        <a class="btn primary" href="https://wa.me/919447664462" target="_blank">Book on WhatsApp</a>
         <a class="btn secondary" href="tel:+919526067300">Call Now</a>
       </div>
     </div>
   </section>
-  <section id="packages">
+  <section class="destinations-section" id="destinations">
     <div class="container">
       <div class="title">
-        <h2>Popular Kerala Packages</h2>
-        <p>Carefully designed tours for families, couples and groups</p>
+        <h2>Kerala & South India Tour Route</h2>
+        <p>Premium cab tours, sightseeing and customized journeys from Kochi</p>
       </div>
       <p class="destination-intro">
         Travel comfortably with Cochin Cabs Tours & Travels across Kerala and popular South India destinations.
@@ -353,7 +410,6 @@
           <img src="./images/athirappilly.jpeg" alt="Athirappilly Waterfalls">
           <div class="destination-content"><span class="badge">Waterfalls</span><h3>Athirappally</h3><p>Kerala's famous waterfalls, forest scenery and a refreshing day-trip experience.</p></div>
         </article>
-        
         <article class="destination-card">
           <span class="destination-number">02</span>
           <img src="./images/munnar.jpeg" alt="Munnar tea gardens">
@@ -422,6 +478,7 @@
       </div>
     </div>
   </section>
+
   <section class="fleet" id="fleet">
     <div class="container">
       <div class="title">
@@ -496,13 +553,13 @@
           a reliable travel partner across Kerala and South India.
         </p>
         <div class="btns" style="justify-content:flex-start">
-          <a class="btn primary" href="https://wa.me/919074298842" style="background:var(--blue);color:#fff">Plan My
+          <a class="btn primary" href="https://wa.me/919447664462" style="background:var(--blue);color:#fff">Plan My
             Trip</a>
         </div>
       </div>
       <div>
         <img alt=""
-          src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" />
+          src="./images/about_background.jpg" />
       </div>
     </div>
   </section>
@@ -515,8 +572,9 @@
       <div class="contact-wrap">
         <div class="info">
           <h3>Cochin Cabs Tours &amp; Travels</h3>
-          <p><strong>Helpline:</strong> 9526067300</p>
-          <p><strong>WhatsApp:</strong> 9074298842 / 9447369575</p>
+          <p><strong>Helpline:</strong> 9074298842</p>
+          <p><strong>WhatsApp:</strong> 9447664462 / 7012896170</p>
+          <p><strong>Mobile:</strong> 9526067300, 8547049575, 9447369575</p>
           <p><strong>Email:</strong> cochincabs01@gmail.com</p>
           <p><strong>Address:</strong><br />
             63/1115, Near SNDP Hall,<br />
@@ -539,7 +597,7 @@
   <footer>
     © 2026 Cochin Cabs Tours &amp; Travels Ernakulam · www.cochincabs.com
   </footer>
-  <a class="whatsapp" href="https://wa.me/919074298842" target="_blank">💬</a>
+  <a class="whatsapp" href="https://wa.me/919447664462" target="_blank">💬</a>
 </body>
 
 </html>
